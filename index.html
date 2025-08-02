@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carbon Footprint Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>🌍 Carbon Footprint Calculator</h1>
+    <form id="carbonForm">
+      <label>🚗 Travel by Car (km/week): <input type="number" id="travel" required /></label>
+      <label>⚡ Electricity Use (kWh/month): <input type="number" id="electricity" required /></label>
+      <label>🍖 Meat-based Meals (per week): <input type="number" id="meals" required /></label>
+      <label>🗑️ Waste (kg/week): <input type="number" id="waste" required /></label>
+      <label>✈️ Flights (per year): <input type="number" id="flights" required /></label>
+      <button type="submit">Calculate Footprint</button>
+    </form>
+    <div id="result"></div>
+  </div>
+  <footer>
+    <p>Built by Shubham Kumar | Powered by Agnirva API (Demo Mode)</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
