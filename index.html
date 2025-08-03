@@ -1,28 +1,64 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Carbon Footprint Calculator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title> Carbon Footprint Calculator</title>
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <header>
+    🌿 Carbon Footprint Calculator 🌍
+  </header>
+
   <div class="container">
-    <h1>🌍 Carbon Footprint Calculator</h1>
-    <form id="carbonForm">
-      <label>🚗 Travel by Car (km/week): <input type="number" id="travel" required /></label>
-      <label>⚡ Electricity Use (kWh/month): <input type="number" id="electricity" required /></label>
-      <label>🍖 Meat-based Meals (per week): <input type="number" id="meals" required /></label>
-      <label>🗑️ Waste (kg/week): <input type="number" id="waste" required /></label>
-      <label>✈️ Flights (per year): <input type="number" id="flights" required /></label>
-      <button type="submit">Calculate Footprint</button>
-    </form>
-    <div id="result"></div>
+    <div class="input-section">
+      <h2> 🌿Your Lifestyle Inputs</h2>
+      <label for="car">🚗 Travel by Car (km/week):</label>
+      <input type="number" id="car" placeholder="e.g. 150"/>
+
+      <label for="electricity">💡 Electricity Usage (kWh/month):</label>
+      <input type="number" id="electricity" placeholder="e.g. 250"/>
+
+      <label for="waste">🗑 Waste Produced (kg/week):</label>
+      <input type="number" id="waste" placeholder="e.g. 10"/>
+
+      <label for="flights">✈️ Flights Taken (per year):</label>
+      <input type="number" id="flights" placeholder="e.g. 2"/>
+
+      <button onclick="calculateCarbon()">✨ Calculate My Footprint</button>
+    </div>
+
+    <div class="result-section">
+      <div class="scale">
+        <div class="indicator" id="indicator"></div>
+      </div>
+      <div class="tree-info" id="treeInfo"></div>
+      <div class="quote" id="quoteBox"></div>
+      <canvas id="treeCanvas"></canvas>
+    </div>
   </div>
+
+  <section class="explanation">
+    <h2>📚 Calculation Breakdown</h2>
+    <p>Your monthly carbon footprint is calculated based on:</p>
+    <ul>
+      <li><strong>Travel by Car:</strong> <code>km/week × 4 × 0.21</code></li>
+      <li><strong>Electricity:</strong> <code>kWh/month × 0.5</code></li>
+      <li><strong>Waste:</strong> <code>kg/week × 4 × 0.18</code></li>
+      <li><strong>Flights:</strong> <code>(flights/year × 250) ÷ 12</code></li>
+    </ul>
+    <p>
+      🌳 Trees needed to offset: <strong>Total CO₂ ÷ 21</strong><br>
+      (Each mature tree absorbs ~21 kg CO₂/month).
+    </p>
+  </section>
+
   <footer>
-    <p>Built by Shubham Kumar | Powered by Agnirva API (Demo Mode)</p>
+    Made with ❤️ for a greener world.
   </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
